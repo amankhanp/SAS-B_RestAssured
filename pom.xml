@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.codeaman.sas-b_RestAssured</groupId>
+    <groupId>org.codeaman.restassured</groupId>
     <artifactId>SAS-B_RestAssured</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>restassured</name>
@@ -38,6 +38,14 @@
             <groupId>io.rest-assured</groupId>
             <artifactId>xml-path</artifactId>
             <version>4.1.2</version>
+        </dependency>
+
+        <!-- to test the functionality added testng -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.0.0</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
