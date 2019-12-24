@@ -65,4 +65,5 @@ public class Test1_BasicFeaturesForXML {
         given().get("http://thomas-bayer.com/sqlrest/CUSTOMER").
         then().body(hasXPath("/CUSTOMERList/CUSTOMER[text()='20']")).log().all();
     }
+
 }
