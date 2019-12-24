@@ -58,7 +58,7 @@ public class Test1_BasicFeaturesForXML {
 
     /**
      * Simply we are hitting given XML api ("http://thomas-bayer.com/sqlrest/CUSTOMER").
-     * With xpath 'CUSTOMERList/CUSTOMER' we are chekcing some text which is '20' contains or not.
+     * With xpath 'CUSTOMERList/CUSTOMER' we are checking some text which is '20' contains or not.
      */
     @Test
     public void testUsingXpath2(){

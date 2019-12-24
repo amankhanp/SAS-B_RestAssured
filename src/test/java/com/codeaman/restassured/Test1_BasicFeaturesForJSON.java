@@ -21,7 +21,7 @@ public class Test1_BasicFeaturesForJSON {
 
     /**
      * Simply we are hitting given api ("https://jsonplaceholder.typicode.com/posts/3").
-     * and then validating its response and also Verifying code and and print complete response in console.
+     * and then validating its response and also printing the complete response in console.
      */
     @Test
     public void testLogging(){
