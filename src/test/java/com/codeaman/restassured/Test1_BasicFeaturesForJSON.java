@@ -12,6 +12,7 @@ public class Test1_BasicFeaturesForJSON {
     /**
      * Simply we are hitting given api ("https://jsonplaceholder.typicode.com/posts/3").
      * and then validating its response. That's all with this method.
+     * (static import io.restassured.RestAssured.*) -> given(), then().
      */
     @Test
     public void testStatusCode(){
@@ -53,6 +54,7 @@ public class Test1_BasicFeaturesForJSON {
      * Simply we are hitting given params, header.
      * when calling api ("https://jsonplaceholder.typicode.com/posts/1")
      * then validating its status code also printing its logs.
+     * (static import io.restassured.RestAssured.*) -> given(), when() and then().
      */
     @Test
     public void testParamsAndHeaders(){
