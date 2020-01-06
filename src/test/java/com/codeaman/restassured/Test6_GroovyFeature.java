@@ -13,7 +13,7 @@ public class Test6_GroovyFeature {
 
     /**
      * In this method, we are using RestAssured implemented in Groovy and hence Groovy advantages can be taken
-     * Here we're adding lenght of all "name" code coming in response.
+     * Here we're adding length of all "name" code coming in response.
      */
     @Test
     public void testValidateLengthOfResponseUsingGroovy() {
@@ -22,10 +22,10 @@ public class Test6_GroovyFeature {
     }
 
     /**
-     * In this method we want to validate our choosen country is present in the response or not by 'Java',
+     * In this method we want to validate our choose country is present in the response or not by 'Java',
      * we are taken the response as string and stored in a string variable
      * then from response using 'key' fetched values and those are stored in a list and print the same in console.
-     * Using for loop validating whether our choosen country is present or not.
+     * Using for loop validating whether our choose country is present or not.
      */
     @Test
     public void testGetResponseAsList() {
@@ -43,7 +43,7 @@ public class Test6_GroovyFeature {
     }
 
     /**
-     * In this method we want to validate our choosen country is present in the response or not by 'Groovy',
+     * In this method we want to validate our choose country is present in the response or not by 'Groovy',
      * In the above program it took 4 lines to validate our matching string. but in groovy we can do by one line.
      */
     @Test
