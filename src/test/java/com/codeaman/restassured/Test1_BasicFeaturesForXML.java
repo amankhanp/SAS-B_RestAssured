@@ -48,7 +48,7 @@ public class Test1_BasicFeaturesForXML {
 
     /**
      * Simply we are hitting given XML api ("http://thomas-bayer.com/sqlrest/CUSTOMER/10").
-     * then xpaths can also be used to find the values and also used containsString method/function.
+     * then xpath's can also be used to find the values and also used containsString method/function.
      */
     @Test
     public void testUsingXpath1(){

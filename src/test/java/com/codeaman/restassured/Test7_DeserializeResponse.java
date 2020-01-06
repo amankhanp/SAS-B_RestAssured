@@ -7,10 +7,13 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 import static org.testng.Assert.assertEquals;
 
+/**
+ * In this class, we are doing deserialization of response.
+ */
 public class Test7_DeserializeResponse {
 
-    /*
-     *
+    /**
+     * In this method, we are just validating new API status in this program.
      */
     @Test
     public void testAPI(){
@@ -25,6 +28,10 @@ public class Test7_DeserializeResponse {
                 statusCode(200);
     }
 
+    /**
+     * In this method, we are extracting Json response in Java object.
+     * Which is known as deserialization. Also, validating it.
+     */
     @Test
     public void testDeserializeAPIResponse(){
 

@@ -1,8 +1,8 @@
 package com.codeaman.restassured;
 
 import org.testng.annotations.Test;
+
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.*;
 
 /**
  * In this class we are simply checking post method how it works.

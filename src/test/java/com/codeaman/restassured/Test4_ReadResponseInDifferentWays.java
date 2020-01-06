@@ -13,7 +13,7 @@ import static io.restassured.RestAssured.when;
 import static org.hamcrest.Matchers.*;
 
 /**
- * In this class we are reading response in different ways.s
+ * In this class we are reading response in different ways.
  */
 public class Test4_ReadResponseInDifferentWays {
 
@@ -80,7 +80,7 @@ public class Test4_ReadResponseInDifferentWays {
     }
 
     /**
-     * Extract details as reponse for further use.
+     * Extract details as response for further use.
      */
     @Test
     public void testExtractDetailsUsingResponse(){

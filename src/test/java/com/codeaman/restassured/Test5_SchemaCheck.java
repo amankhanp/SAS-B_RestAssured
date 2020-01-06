@@ -1,11 +1,9 @@
 package com.codeaman.restassured;
 
-import static io.restassured.RestAssured.authentication;
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.*;
-
-import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import org.testng.annotations.Test;
+
+import static io.restassured.RestAssured.given;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 /**
  * In this class we will learn about Schema Validation.
