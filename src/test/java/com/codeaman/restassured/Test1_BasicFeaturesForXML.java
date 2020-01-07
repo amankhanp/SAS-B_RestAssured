@@ -16,8 +16,10 @@ public class Test1_BasicFeaturesForXML {
      */
     @Test
     public void testStatusCode(){
-        given().get("http://thomas-bayer.com/sqlrest/CUSTOMER/10").
-        then().body("CUSTOMER.CITY", equalTo("Dallas")).log().all();
+        given().
+                get("http://thomas-bayer.com/sqlrest/CUSTOMER/10").
+        then().
+                body("CUSTOMER.CITY", equalTo("Dallas")).log().all();
     }
 
     /**
@@ -26,12 +28,13 @@ public class Test1_BasicFeaturesForXML {
      */
     @Test
     public void testMultipleContent(){
-        given().get("http://thomas-bayer.com/sqlrest/CUSTOMER/10").
+        given().
+                get("http://thomas-bayer.com/sqlrest/CUSTOMER/10").
         then().
-            body("CUSTOMER.CITY", equalTo("Dallas")).
-            body("CUSTOMER.ID", equalTo("10")).
-            body("CUSTOMER.FIRSTNAME", equalTo("Sue")).
-            log().all();
+                body("CUSTOMER.CITY", equalTo("Dallas")).
+                body("CUSTOMER.ID", equalTo("10")).
+                body("CUSTOMER.FIRSTNAME", equalTo("Sue")).
+                log().all();
     }
 
     /**
@@ -42,8 +45,10 @@ public class Test1_BasicFeaturesForXML {
      */
     @Test
     public void testCompleteTextInOneGo(){
-        given().get("http://thomas-bayer.com/sqlrest/CUSTOMER/10").
-        then().body("CUSTOMER.text()", equalTo("10SueFuller135 Upland Pl.Dallas"));
+        given().
+                get("http://thomas-bayer.com/sqlrest/CUSTOMER/10").
+        then().
+                body("CUSTOMER.text()", equalTo("10SueFuller135 Upland Pl.Dallas"));
     }
 
     /**
@@ -52,8 +57,10 @@ public class Test1_BasicFeaturesForXML {
      */
     @Test
     public void testUsingXpath1(){
-        given().get("http://thomas-bayer.com/sqlrest/CUSTOMER/10").
-        then().body(hasXPath("/CUSTOMER/FIRSTNAME", containsString("Sue")));
+        given().
+                get("http://thomas-bayer.com/sqlrest/CUSTOMER/10").
+        then().
+                body(hasXPath("/CUSTOMER/FIRSTNAME", containsString("Sue")));
     }
 
     /**
@@ -62,8 +69,28 @@ public class Test1_BasicFeaturesForXML {
      */
     @Test
     public void testUsingXpath2(){
-        given().get("http://thomas-bayer.com/sqlrest/CUSTOMER").
-        then().body(hasXPath("/CUSTOMERList/CUSTOMER[text()='20']")).log().all();
+        given().
+                get("http://thomas-bayer.com/sqlrest/CUSTOMER").
+        then().
+                body(hasXPath("/CUSTOMERList/CUSTOMER[text()='20']")).log().all();
+    }
+
+    /**
+     * In this method, given api accepts only 'xml' and then validating its status code.
+     */
+    @Test
+    public void testXML(){
+        given().
+                baseUri("https://petstore.swagger.io").
+                basePath("/v2").
+                accept("application/xml").
+        when().
+                get("/pet/12345").
+        then().
+                assertThat().
+                statusCode(200).
+                body("Pet.status", equalTo("pending"));
+
     }
 
 }
