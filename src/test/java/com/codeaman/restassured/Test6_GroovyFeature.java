@@ -8,8 +8,37 @@ import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
 import static io.restassured.path.json.JsonPath.from;
 import static org.hamcrest.Matchers.greaterThan;
+import static org.hamcrest.Matchers.is;
 
 public class Test6_GroovyFeature {
+
+    /**
+     * In this method we validate API response size. Using Groovy method 'size()',
+     * which counts Objects.
+     */
+    @Test
+    public void testValidateApiResponseSize(){
+        given().
+                baseUri("https://jsonplaceholder.typicode.com").
+        when().
+                get("/users").
+        then().
+                body("size()", greaterThan(9));
+    }
+
+    /**
+     * In this method we are just validate API response contains given string.
+     * Using key.any{'value'} we just pass a value which compares the all objects key values.
+     */
+    @Test
+    public void testValidateApiResponseContainsGivenString(){
+        given().
+                baseUri("https://jsonplaceholder.typicode.com").
+        when().
+                get("/users").
+        then().
+                body("name.any{'Ervin Howell'}", is(true));
+    }
 
     /**
      * In this method, we are using RestAssured implemented in Groovy and hence Groovy advantages can be taken
