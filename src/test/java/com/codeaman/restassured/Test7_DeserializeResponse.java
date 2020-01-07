@@ -35,13 +35,13 @@ public class Test7_DeserializeResponse {
     @Test
     public void testDeserializeAPIResponse(){
 
-        PetsDetails petsDetails = given().get("https://petstore.swagger.io/v2/pet/537").
+        PetsDetails petsDetails = given().get("https://petstore.swagger.io/v2/pet/1").
                 then().assertThat().extract().as(PetsDetails.class);
 
-        assertEquals(petsDetails.getId(), 537);
-        assertEquals(petsDetails.getCategory().getName(), "cat-family");
-        assertEquals(petsDetails.getName(), "Kitty");
-        assertEquals(petsDetails.getTags().get(0).getName(), "cat");
-        assertEquals(petsDetails.getStatus(), "pending");
+        assertEquals(petsDetails.getId(), 1);
+        assertEquals(petsDetails.getCategory().getName(), "string");
+        assertEquals(petsDetails.getName(), "doggie");
+        assertEquals(petsDetails.getTags().get(0).getName(), "string");
+        assertEquals(petsDetails.getStatus(), "available");
     }
 }

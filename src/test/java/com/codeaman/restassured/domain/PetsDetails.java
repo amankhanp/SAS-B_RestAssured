@@ -20,12 +20,13 @@ public class PetsDetails {
 
     private String status;
 
-    @Getter @Setter
-    public class Categories{
-
-        private int id;
-
-        private String name;
+    private PetsDetails() {
     }
 
+    public PetsDetails(int id, Categories category, String name, String status) {
+        this.id = id;
+        this.category = category;
+        this.name = name;
+        this.status = status;
+    }
 }
