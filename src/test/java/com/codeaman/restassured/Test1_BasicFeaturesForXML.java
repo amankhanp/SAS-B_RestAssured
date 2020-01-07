@@ -90,7 +90,6 @@ public class Test1_BasicFeaturesForXML {
                 assertThat().
                 statusCode(200).
                 body("Pet.status", equalTo("pending"));
-
     }
 
 }
