@@ -10,15 +10,15 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 
 /**
- * In this class, we are using CURD, which stands for C-Create(Post), U-Update(Put), R-Read(get) and D-Delete(delete).
+ * In this class, we are using CRUD, which stands for C-Create(Post), R-Read(get), U-Update(Put) and D-Delete(delete).
  */
-public class Test9_UsingCURD {
+public class Test9_UsingCRUD {
 
     /**
      * In Before class method, we are giving baseURI, basePath and requestSpecification.
      */
     @BeforeClass
-    public void testSetUp(){
+    public void testSetUp() {
         RestAssured.baseURI = "https://petstore.swagger.io";
         RestAssured.basePath = "/v2";
         RestAssured.requestSpecification = new RequestSpecBuilder().
@@ -30,7 +30,7 @@ public class Test9_UsingCURD {
      * and in given body session we are passing pet object when we are posting a new request.
      * post method will take the request from body and adds a new pet to the store as per API.
      * in this serialization take place.
-     * using 'post' method - we 'create' a new request. CURD
+     * using 'post' method - we 'create' a new request. CRUD
      */
     @Test()
     public void testUsingPost() {
@@ -46,7 +46,7 @@ public class Test9_UsingCURD {
 
     /**
      * In this method, we are using put method to update the request.
-     * using 'put' method - we 'update' a request. CURD
+     * using 'put' method - we 'update' a request. CRUD
      */
     @Test(priority = 1)
     public void testUsingPut() {
@@ -64,12 +64,12 @@ public class Test9_UsingCURD {
      * In this method, as we see in previous methods we have used given, when method to set
      * baseURL, basePath or RequestSpecification but now in this class we have declared all the
      * common details in beforeClass method,so we have started this method from static get method.
-     * using 'get' method - we 'read' a request. CURD
+     * using 'get' method - we 'read' a request. CRUD
      */
     @Test(priority = 2)
     public void testUsingGet() {
         get("/pet/537").
-        then().
+         then().
                 assertThat().
                 statusCode(200).
                 log().all();
@@ -77,10 +77,10 @@ public class Test9_UsingCURD {
 
     /**
      * In this method we are just deleting the pet details which we have created using post method.
-     * using 'delete' method - we 'delete' a request. CURD
+     * using 'delete' method - we 'delete' a request. CRUD
      */
     @Test(priority = 3)
-    public void testCaseDelete(){
+    public void testCaseDelete() {
         delete("/pet/537").
         then().
                 assertThat().statusCode(200);
