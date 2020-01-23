@@ -27,7 +27,7 @@ public class Test1_BasicFeaturesForJSON {
     @Test
     public void testLogging(){
         given().get("https://jsonplaceholder.typicode.com/posts/3").
-                then().statusCode(200).log().all();
+        then().statusCode(200).log().all();
     }
 
     /**
@@ -37,7 +37,7 @@ public class Test1_BasicFeaturesForJSON {
     @Test
     public void testEqualToFunction(){
         given().get("https://jsonplaceholder.typicode.com/posts/2").
-                then().body("title", equalTo("qui est esse"));
+        then().body("title", equalTo("qui est esse"));
     }
 
     /**
@@ -47,7 +47,7 @@ public class Test1_BasicFeaturesForJSON {
     @Test
     public void testHasItemFunction(){
         given().get("https://jsonplaceholder.typicode.com/posts").
-                then().body("id", hasItems(2,10,99));
+        then().body("id", hasItems(2,10,99));
     }
 
     /**

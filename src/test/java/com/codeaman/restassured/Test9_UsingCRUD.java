@@ -29,7 +29,7 @@ public class Test9_UsingCRUD {
      * In this method, created 2 objects related to Pet.
      * and in given body session we are passing pet object when we are posting a new request.
      * post method will take the request from body and adds a new pet to the store as per API.
-     * in this serialization take place.
+     * in this 'serialization' take place.
      * using 'post' method - we 'create' a new request. CRUD
      */
     @Test()
