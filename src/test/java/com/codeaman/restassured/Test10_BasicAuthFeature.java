@@ -7,6 +7,10 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import java.util.List;
+import java.util.Map;
+
 import static io.restassured.RestAssured.get;
 import static org.testng.Assert.assertEquals;
 
@@ -65,4 +69,40 @@ public class Test10_BasicAuthFeature {
         String name = JsonPath.from(responseStrObj).get("name");
         assertEquals(name, "Manchester United FC");
     }
+
+    @Test
+    public void test5(){
+        assertEquals(get("/teams/66").path("name"), "Manchester United FC");
+    }
+
+    @Test
+    public void test6(){
+        Response response = get("/teams");
+        assertEquals(response.path("teams[0].name"), "Arsenal FC");
+        assertEquals(response.path("teams[-1].name"), "Preston North End FC");
+
+        List<String> nameListTest1 = response.jsonPath().get("teams.name");
+        System.out.println(nameListTest1);
+
+        List<String> nameListTest2 = response.path("teams.name");
+        System.out.println(nameListTest2);
+
+        List<Map<String, ?>> data = response.path("teams");
+        System.out.println(data);
+
+        Map<String, ?> singleTeamData = response.path("teams.find{it.name == 'Arsenal FC'}");
+        System.out.println(singleTeamData);
+
+        String shortName = response.path("teams.find{it.name == 'Arsenal FC'}.shortName");
+        System.out.println(shortName);
+
+        List<String> listOfNameGreaterThanTwenty = get("teams/66").path("squad.findAll { it.shirtNumber > 20 }.name");
+        System.out.println(listOfNameGreaterThanTwenty);
+
+        System.out.println(get("teams/66").path("squad.max { it.shirtNumber }.name").toString() + " " +
+                get("teams/66").path("squad.max { it.shirtNumber }.shirtNumber").toString());
+
+        assertEquals(get("teams/66").path("squad.find{it.shirtNumber == 20}.name"), "Diogo Dalot");
+    }
+
 }
